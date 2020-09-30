@@ -27,40 +27,101 @@
 
   <!-- akhit jumbotron -->
 
+  @if ($errors->any())
+
+       <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li>{{$error}}</li>
+                      @endforeach
+            </ul>
+                </div>
+                  @endif
 
   <!-- awal menu contact us -->
 
   <main>
     <div class="container">
       <div class="row">
-        <div class="col-sm-10 col-md-8 col-lg-6">
-          <h3>Contact us</h3>
-            <h2 class="mt-4">PT.Sriwijaya Air</h2>
-            <p class="pt-2">Nomor call center Sriwijaya Air  062-21-5507902</p>
-            <p>Hotline dan customer service Sriwijaya Air <br> +0804 1777 777</p>
+        <div class="col text-center">
+          <h2>Contact Us</h2>
         </div>
-        <div class="col-sm-10 col-md-8 col-lg-6">
-          <h3>Say Hello!</h3>
-          <form>
-            <div class="form-group">
-              <label for="fullname">Full Name</label>
-              <input type="email" placeholder="Masukan full name" class="form-control" id="fullname"
-                aria-describedby="emailHelp" />
+      </div>
+      <div class="row mt-5">
+        <div class="col">
+          <div class="card" id="contact" style="width: 16rem;">
+            <div class="card-body text-center">
+              <img src="{{url('frontend/img/contacts.png')}}" width="200px" style="">
             </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" placeholder="Masukan Email" class="form-control" id="exampleInputEmail1"
-                aria-describedby="emailHelp" />
+            <h6 class="text-center pb-3">Telephone</h6>
+            <table style="font-size: 10px; margin: auto; margin-bottom: 80px">
+              <tr>
+                <th class="pr-5">Office Name</th>
+                <th>Telephone</th>
+              </tr>
+              <tr>
+                <td>Cusromer Service</td>
+                <td>+62-81189835</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" id="contact" style="width: 16rem;">
+            <div class="card-body text-center">
+              <img src="{{url('frontend/img/email.png')}}" width="200px" height="180px">
             </div>
-            <div class="form-group">
-              <label for="measseges">Measseges</label>
-              <textarea type="text" placeholder="Masukan Pesan" name="measseges" class="form-control"
-                id="measseges"></textarea>
+            <h6 class="text-center pb-3">Email</h6>
+            <table style="font-size: 10px; margin: auto; margin-bottom: 35px">
+              <tr>
+                <th class="pr-5">Office Name</th>
+                <th>e-mail</th>
+              </tr>
+              <tr>
+                <td>Cusromer Service</td>
+                <td>sriwijayaair@gmail.com</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" id="contact" style="width: 16rem;">
+            <div class="card-body text-center">
+              <img src="{{url('frontend/img/dev.png')}}" width="200px" style="">
             </div>
-            <button type="submit" class="btn btn-primary">Kirim</button>
-          </form>
+            <h6 class="text-center pb-3">Developer</h6>
+            <table style="font-size: 10px; margin: auto; margin-bottom: 65px">
+              <tr>
+                <th class="pr-5">Name</th>
+                <th>Telephone</th>
+              </tr>
+              <tr>
+                <td>Aji Wahyugi</td>
+                <td>+62-89643929650</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" id="contact" style="width: 16rem;">
+            <div class="card-body text-center">
+              <img src="{{url('frontend/img/address.png')}}" width="200px" style="">
+            </div>
+            <h6 class="text-center pb-3">Address</h6>
+            <table style="font-size: 10px; margin: auto; margin-bottom: 55px">
+              <tr>
+                <th class="pr-5">Office Name</th>
+                <th>Address</th>
+              </tr>
+              <tr>
+                <td>Sriwijaya Air</td>
+                <td>Cengkareng-Tangerang</td>
+              </tr>
+            </table>
+          </div>
         </div>
       </div>
     </div>
   </main>
+
 @endsection

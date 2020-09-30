@@ -54,14 +54,15 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">Lacak</th>
-                                        <th scope="col">Waktu</th>
+                                       
+                                        <th scope="col">Tanggal</th>
                                         <th scope="col">Destinasi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                    @forelse ($items as $item)
                                    <tr>
-                                      <td>{{$item->lacak}}</td>
+                                       <td>{{$item->lacak}}</td>
                                       <td>{{$item->waktu}}</td>
                                       <td>{{$item->destinasi}}</td>
                                     </tr>
@@ -74,14 +75,13 @@
                                    @endforelse
                                 </tbody>
                             </table>
+                            <span style="font-style: italic;">*Lokasi Barang Anda Pada Saat Ini Update List Paling Bawah, Terimakasih*</span>
                         </div>
+                        <button class="btn btn-secondary"><a href="/tracking_area"
+                                class="text-white">Kembali</a></button>
                     </div>
                 </div>
-                <span style="font-style: italic;">*Jika barang sudah tiba dialamat anda silahkan tekan konfirmasi, Terimakasih*</span>
                 <br>
-                <button class="btn btn-secondary"><a href="/"
-                        class="text-white">Kembali</a></button>
-                <button class="btn btn-primary">Konfirmasi</button>
             </div>
         </div>
     </div>

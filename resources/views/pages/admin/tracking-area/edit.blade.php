@@ -35,16 +35,16 @@
                                 <input type="text" class="form-control" name="resi" id="resi" value="{{$item->resi}}"
                                     placeholder="Edit Resi" />
                             </div>
+                           
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" class="form-control" name="email" id="email" value="{{$item->email}}"
-                                placeholder="Edit Email" />
+                                <label for="pengiriman_barang_id">Pengirim</label>
+                                <select name="pengiriman_barang_id" id="pengiriman_barang_id" class="form-control">
+                                    @foreach($pengiriman as $p)
+                                        <option value="{{ $p->id }}">{{ $p->name }} [ {{ $p->tanggal_pengiriman }} ]</option>
+                                    @endforeach
+                                </select>
                             </div>
-                            <div class="form-group">
-                                <label for="telepon">telepon</label>
-                                <input type="number" class="form-control" name="telepon" id="telepon" value="{{$item->telepon}}"
-                                placeholder="Edit Nomor Telepon" />
-                            </div>
+                            
                             <div class="form-group">
                                 <label for="kota_asal">Kota Asal</label>
                                 <input type="text" class="form-control" name="kota_asal" id="kota_asal" value="{{$item->kota_asal}}"
@@ -55,6 +55,7 @@
                                 <input type="text" class="form-control" name="kota_tujuan" id="kota_tujuan" value="{{$item->kota_tujuan}}"
                                     placeholder="Kota Tujuan" />
                             </div>
+                           
                             <div class="form-group">
                                 <label for="alamat">Alamat</label>
                                 <textarea name="alamat" rows="10" class="d-block w-100 form-control">{{$item->alamat}}</textarea>

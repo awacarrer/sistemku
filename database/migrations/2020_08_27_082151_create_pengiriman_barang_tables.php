@@ -14,14 +14,15 @@ class CreatePengirimanBarangTables extends Migration
     public function up()
     {
         Schema::create('pengiriman_barang', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->dateTime('tanggal_pengiriman');
-            $table->text('nama_penerima');
-            $table->string('kota_asal');
-            $table->string('kota_tujuan');
+            $table->integer('id');
+            $table->date('tanggal_pengiriman');
             $table->text('nama_penerima');
             $table->text('organisasi_penerima');
-            $table->longText('alamat');
+            $table->text('nama_barang');
+            $table->integer('berat_barang');
+            $table->integer('biaya');
+            $table->longText('alamat_penerima');
+            $table->integer('pelanggan_id');
             $table->timestamps();
         });
     }

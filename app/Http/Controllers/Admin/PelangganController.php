@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\PelangganRequest;
+use App\Http\Requests\Admin\UpdatePelangganRequest;
 use App\Pelanggan;
 use Illuminate\Http\Request;
 use Illuminate\Support\str;
@@ -17,11 +18,8 @@ class PelangganController extends Controller
      */
     public function index()
     {
-        $items = Pelanggan::all();
-
-        return view('pages.admin.pelanggan.index', [
-            'items' => $items
-        ]);
+        $customers = Pelanggan::all();
+        return view('pages.admin.pelanggan.index', compact('customers'));
     }
 
     /**
@@ -55,6 +53,7 @@ class PelangganController extends Controller
        
         Pelanggan::create([
             'nama' => $request->nama,
+            'pelanggan_id' => $request->pelanggan_id,
             'jenis_kelamin' => $request->jenis_kelamin,
             'alamat' => $request->alamat,
             'telepon' => $request->telepon,
@@ -97,27 +96,36 @@ class PelangganController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PelangganRequest $request, $id)
+    public function update(UpdatePelangganRequest $request, $id)
     {
         $item = Pelanggan::findOrFail($id);
 
-        $nama = $request->nama;
-        $foto = $request->file('foto');
-        $extension = $foto->extension();
+       
         $nama_foto = "";
-
+        
         if(!empty($foto)){
-            $nama_foto = time()."_".$nama.".".$extension;
+            $foto = $request->file('foto');
+            $extension = $foto->extension();
+            $nama_foto = time().".".$extension;
             $nama_folder = 'img';
             $foto->move($nama_folder,$nama_foto);
         }
        
-        $item->nama = $request->nama;
-        $item->jenis_kelamin = $request->jenis_kelamin;
-        $item->alamat = $request->alamat;
-        $item->telepon = $request->telepon;
-        $item->email = $request->email;
-        $item->foto = $nama_foto;
+        // $item->nama = $request->nama;
+        // $item->pelanggan_id = $request->pelanggan_id;
+        // $item->jenis_kelamin = $request->jenis_kelamin;
+        // $item->alamat = $request->alamat;
+        // $item->telepon = $request->telepon;
+        // $item->email = $request->email;
+        // $item->foto = $nama_foto;
+
+        $data = $request->all();
+        $data['slug'] = Str::slug($request->resi);
+
+        $item = Pelanggan::findOrFail($id);
+
+        $item->update($data);
+
         $item->save();
         return redirect()->route('pelanggan.index');
     }

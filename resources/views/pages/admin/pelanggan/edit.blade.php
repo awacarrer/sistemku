@@ -35,10 +35,6 @@
                                 <input type="file" class="form-control" name="foto" id="foto" accept=".jpeg,.png,.jpg"/>
                             </div>
                             <div class="form-group">
-                                <label for="nama">Nama</label>
-                                <input type="text" class="form-control" name="nama" id="nama" value="{{$item->nama}}" placeholder="Masukan Nama" />
-                            </div>
-                            <div class="form-group">
                                 <label for="jenis_kelamin">Jenis Kelamin</label>
                                 <select class="form-control" name="jenis_kelamin" id="jenis_kelamin">
                                 <option>Pria</option>
@@ -46,12 +42,12 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="telepon">Telepon</label>
-                                <input type="number" class="form-control" name="telepon" id="telepon" value="{{$item->telepon}}" placeholder="Masukan Telepon" />
+                                <label for="no_telpon">Telepon</label>
+                                <input type="number" class="form-control" name="no_telpon" id="no_telpon" value="{{$item->no_telpon}}" placeholder="Masukan Telepon" />
                             </div>
                             <div class="form-group">
                                 <label for="email">E-mail</label>
-                                <input type="text" class="form-control" name="email" id="email" value="{{$item->email}}"
+                                <input type="text" class="form-control" name="email" id="email" value="{{$item->users->email}}"
                                     placeholder="Masukan Email" />
                             </div>
                             <div class="form-group">

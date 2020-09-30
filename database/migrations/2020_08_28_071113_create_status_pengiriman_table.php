@@ -15,7 +15,7 @@ class CreateStatusPengirimanTable extends Migration
     {
         Schema::create('status_pengiriman', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('nama_pengirim');
+            $table->string('tracking_area_id',30);
             $table->text('lacak');
             $table->dateTime('waktu');
             $table->longText('destinasi');

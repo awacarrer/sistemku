@@ -14,13 +14,12 @@ class CreateTrackingAreaTable extends Migration
     public function up()
     {
         Schema::create('tracking_area', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->string('id',30)->primary();
             $table->text('resi');
-            $table->text('email');
-            $table->number('telepon');
             $table->text('kota_asal');
             $table->text('kota_tujuan');
             $table->text('alamat');
+            $table->integer('pengiriman_barang_id');
             $table->softDeletes();
             $table->timestamps();
         });

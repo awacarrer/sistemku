@@ -34,6 +34,10 @@
                                 <input type="file" class="form-control" name="foto" id="foto" accept=".jpeg,.png,.jpg"/>
                             </div>
                             <div class="form-group">
+                                <label for="pelanggan_id">pelanggan_id</label>
+                                <input type="number" class="form-control" name="pelanggan_id" id="pelanggan_id" value="{{old('pelanggan_id')}}" placeholder="Contoh 1" />
+                            </div>
+                            <div class="form-group">
                                 <label for="nama">Nama</label>
                                 <input type="text" class="form-control" name="nama" id="nama" value="{{old('nama')}}" placeholder="Masukan Nama" />
                             </div>

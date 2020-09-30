@@ -19,6 +19,7 @@
                     <thead>
                         <tr>
                             <th scope="col">Foto</th>
+                            {{-- <th scope="col">Pelanggan_id</th> --}}
                             <th scope="col">Nama</th>
                             <th scope="col">Jenis Kelamin</th>
                             <th scope="col">Telepon</th>
@@ -28,30 +29,27 @@
                         </tr>
                     </thead>
                     <tbody>
-                       @forelse ($items as $item)
+                       @forelse ($customers as $customer)
                        <tr>
                           <td>
-                            <img src="/img/{{$item->foto == '' ? 'default.png' : $item->foto}}" alt="" style="width: 60px">
+                            <img src="/img/{{$customer->foto == '' ? 'default.png' : $customer->foto}}" alt="" style="width: 60px">
                           </td>
-                          <td>{{$item->nama}}</td>
-                          <td>{{$item->jenis_kelamin}}</td>
-                          <td>{{$item->telepon}}</td>
-                          <td>{{$item->email}}</td>
-                          <td>{{$item->alamat}}</td>
+                          <td>{{$customer->users->name}}</td>
+                          <td>{{$customer->jenis_kelamin}}</td>
+                          <td>{{$customer->no_telpon}}</td>
+                          <td>{{$customer->users->email}}</td>
+                          <td>{{$customer->alamat}}</td>
                             <td>
-                              <a href="{{route('pelanggan.edit', $item->id)}}" class="btn btn-primary">
+                              <a href="{{route('pelanggan.edit', $customer->id)}}" class="btn btn-primary">
                                   <i class="fa fa-edit"></i>
                               </a>
-                          <form action="{{route('pelanggan.destroy', $item->id)}}" method="post" class="d-inline">
+                          <form action="{{route('pelanggan.destroy', $customer->id)}}" method="post"  onsubmit="return confirm('Yakin dihapus?')" class="d-inline">
                               @csrf
                               @method('delete')
                               <button class="btn btn-danger">
                                   <i class="fa fa-trash"></i>
                               </button>
                           </form>
-                          <a href="{{route('pengiriman-barang.index', $item->id)}}" class="btn btn-success">
-                            <i class="fa fa-box"></i>
-                        </a>
                           </td>
                     </tr>
                        @empty

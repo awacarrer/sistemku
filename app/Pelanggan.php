@@ -11,8 +11,12 @@ class Pelanggan extends Model
 
     protected $fillable = [
 
-        'nama', 'jenis_kelamin', 'alamat', 'telepon', 'email', 'foto'
+        'users_id', 'jenis_kelamin', 'alamat', 'no_telpon', 'foto'
     ];
 
     protected $hidden = [];
+
+    public function users(){
+        return $this->belongsTo('App\User');
+    }
 }

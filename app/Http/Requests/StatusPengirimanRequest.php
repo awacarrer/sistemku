@@ -27,7 +27,8 @@ class StatusPengirimanRequest extends FormRequest
             'nama_pengiriman' => 'required|max:255',
             'lacak' => 'required',
             'waktu' => 'required',
-            'desitinasi' => 'required|max:255',
+            'destinasi' => 'required|max:255',
+            'alamat' => 'required|max:255',
         ];
     }
 }

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','Pengiriman Barang')
+@section('title','Tracking Area')
 
 @section('content')
     
@@ -48,22 +48,20 @@
                 <table class="table table-hover text-center">
                     <thead>
                         <tr>
-                            <th scope="col">No</th>
                             <th scope="col">No Resi</th>
-                            <th scope="col">Tanggal</th>
-                            <th scope="col">Telepon</th>
+                            <th scope="col">Kota Asal</th>
+                            <th scope="col">Kota Tujuan</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @forelse ($trackings as $tracking)
                         <tr>
-                            <th scope="row">1</th>
                             <td>{{$tracking->resi}}</td>
-                            <td>{{$tracking->tanggal_pengiriman}}</td>
-                            <td>{{$tracking->telepon}}</td>
+                            <td>{{$tracking->kota_asal}}</td>
+                            <td>{{$tracking->kota_tujuan}}</td>
                             <td>
-                                <a href="{{route('status_pengiriman')}}">
+                                <a href="{{url('status_pengiriman/'.$tracking->id)}}">
                                     <button class="btn btn-success">Check Lokasi</button>
                                 </a>
                             </td>

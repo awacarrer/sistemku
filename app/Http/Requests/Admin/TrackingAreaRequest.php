@@ -25,11 +25,14 @@ class TrackingAreaRequest extends FormRequest
     {
         return [
             'resi' => 'required|max:255',
-            'email' => 'required|max:255',
-            'telepon' => 'required',
+            'id' => 'required|max:255',
             'kota_asal' => 'required|max:255',
             'kota_tujuan' => 'required|max:255',
+            'lacak' => 'required',
+            'waktu' => 'required',
+            'destinasi' => 'required',
             'alamat' => 'required|max:255',
+            'pengiriman_barang_id' => 'required'
         ];
     }
 }

@@ -11,7 +11,7 @@
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
               <h3 style="font-style: italic; font-weight: bold; color: rgb(167, 167, 167);">
-                Selamat Datang Di Dashboard MPB
+                Selamat Datang Di Dashboard MPB Sriwijaya Air
               </h3>
             </div>
             <div class="col-auto">
@@ -116,6 +116,82 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row mt-2 mb-5">
+    <div class="col">
+      <div class="card" id="contact" style="width: 16rem;">
+        <div class="card-body text-center">
+          <img src="{{url('frontend/img/contacts.png')}}" width="200px" style="">
+        </div>
+        <h6 class="text-center pb-3">Telephone</h6>
+        <table style="font-size: 10px; margin: auto; margin-bottom: 80px">
+          <tr>
+            <th class="pr-5">Office Name</th>
+            <th>Telephone</th>
+          </tr>
+          <tr>
+            <td>Cusromer Service</td>
+            <td>+62-81189835</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" id="contact" style="width: 16rem;">
+        <div class="card-body text-center">
+          <img src="{{url('frontend/img/email.png')}}" width="200px" height="180px">
+        </div>
+        <h6 class="text-center pb-3">Email</h6>
+        <table style="font-size: 10px; margin: auto; margin-bottom: 40px">
+          <tr>
+            <th class="pr-5">Office Name</th>
+            <th>e-mail</th>
+          </tr>
+          <tr>
+            <td>Cusromer Service</td>
+            <td>sriwijayaair@gmail.com</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" id="contact" style="width: 16rem;">
+        <div class="card-body text-center">
+          <img src="{{url('frontend/img/dev.png')}}" width="200px" style="">
+        </div>
+        <h6 class="text-center pb-3">Developer</h6>
+        <table style="font-size: 10px; margin: auto; margin-bottom: 70px">
+          <tr>
+            <th class="pr-5">Name</th>
+            <th>Telephone</th>
+          </tr>
+          <tr>
+            <td>Aji Wahyugi</td>
+            <td>+62-89643929650</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" id="contact" style="width: 16rem;">
+        <div class="card-body text-center">
+          <img src="{{url('frontend/img/address.png')}}" width="200px" style="">
+        </div>
+        <h6 class="text-center pb-3">Address</h6>
+        <table style="font-size: 10px; margin: auto; margin-bottom: 60px">
+          <tr>
+            <th class="pr-5">Office Name</th>
+            <th>Address</th>
+          </tr>
+          <tr>
+            <td>Sriwijaya Air</td>
+            <td>Cengkareng-Tangerang</td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>

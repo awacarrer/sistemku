@@ -34,7 +34,7 @@
                               <a href="{{route('user.edit', $item->id)}}" class="btn btn-primary">
                                   <i class="fa fa-edit"></i>
                               </a>
-                          <form action="{{route('user.destroy', $item->id)}}" method="post" class="d-inline">
+                          <form action="{{route('user.destroy', $item->id)}}" method="post"  onsubmit="return confirm('Yakin dihapus?')" class="d-inline">
                               @csrf
                               @method('delete')
                               <button class="btn btn-danger">

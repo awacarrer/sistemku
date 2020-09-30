@@ -23,7 +23,7 @@
                             <th scope="col">Telepon</th>
                             <th scope="col">Kota Asal</th>
                             <th scope="col">Kota Tujuan</th>
-                            <th scope="col">Alamat</th>
+                            <th scope="col">Alamat Pengirim</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -32,7 +32,7 @@
                        <tr>
                           <td>{{$item->resi}}</td>
                           <td>{{$item->email}}</td>
-                          <td>{{$item->telepon}}</td>
+                          <td>{{$item->no_telpon}}</td>
                           <td>{{$item->kota_asal}}</td>
                           <td>{{$item->kota_tujuan}}</td>
                           <td>{{$item->alamat}}</td>
@@ -40,14 +40,14 @@
                                 <a href="{{route('tracking-area.edit', $item->id)}}" class="btn btn-primary">
                                     <i class="fa fa-edit"></i>
                                 </a>
-                                    <form action="{{route('tracking-area.destroy', $item->id)}}" method="post" class="d-inline">
+                                    <form action="{{route('tracking-area.destroy', $item->id)}}" method="post"  onsubmit="return confirm('Yakin dihapus?')" class="d-inline">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-danger">
                                             <i class="fa fa-trash"></i>
                                         </button>
                                     </form>
-                                    <a href="{{route('driver.index', $item->id)}}" class="btn btn-success">
+                                    <a href="{{route('tracking-area.show', $item->id)}}" class="btn btn-success">
                                         <i class="fa fa-truck"></i>
                                     </a>
                                 </td>

@@ -24,11 +24,9 @@ class PelangganRequest extends FormRequest
     public function rules()
     {
         return [
-            'nama' => 'required|max:255',
             'jenis_kelamin' => 'required',
             'alamat' => 'required|max:255',
-            'telepon' => 'required',
-            'email' => 'required|max:255',
+            'no_telpon' => 'required',
             'foto' => 'required'
         ];
     }

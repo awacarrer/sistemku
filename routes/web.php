@@ -40,8 +40,11 @@ Route::get('/detail_pengiriman','detailpengirimanController@index')
 Route::get('/layanan', 'layananController@index')
     ->name('layanan');
 
-Route::get('/status_pengiriman', 'statuspengirimanController@index')
+Route::get('/status_pengiriman/{id}', 'StatusPengirimanController@index')
     ->name('status_pengiriman');
+
+Route::get('/cek_barang', 'CekBarangController@index')
+    ->name('cek_barang');
 
 
 Route::prefix('admin')
@@ -56,6 +59,9 @@ Route::prefix('admin')
         Route::resource('tracking-area', 'TrackingAreaController');
         Route::resource('driver', 'DriverController');
         Route::resource('detail-barang', 'DetailBarangController');
+        Route::get('detail-barang/create/{id}', 'DetailBarangController@create');
+        // Route::resource('status-pengiriman', 'StatusPengirimanController');
+        
     });
 Auth::routes();
 

@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\PengirimanBarangRequest;
 use App\PengirimanBarang;
+use App\Pelanggan;
 use Illuminate\Http\Request;
 use Illuminate\Support\str;
+use Illuminate\Support\Facades\DB;
 
 class PengirimanBarangController extends Controller
 {
@@ -17,11 +19,16 @@ class PengirimanBarangController extends Controller
      */
     public function index()
     {
-        $items = PengirimanBarang::all();
-
-        return view('pages.admin.pengiriman-barang.index', [
-            'items' => $items
-        ]);
+        // $pengiriman = PengirimanBarang::all();
+        // $items = PengirimanBarang::with([
+        //     'details','pelanggan','user'
+        // ])->get();
+        $pengiriman = DB::table('pengiriman_barang')
+                        ->select('*', 'pengiriman_barang.id as id')
+                        ->join('pelanggan','pengiriman_barang.pelanggan_id','=','pelanggan.id')
+                        ->join('users','pelanggan.users_id','=','users.id')
+                        ->get();
+        return view('pages.admin.pengiriman-barang.index', compact ('pengiriman'));
     }
 
     /**
@@ -31,7 +38,8 @@ class PengirimanBarangController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.pengiriman-barang.create');
+        $pelanggan = Pelanggan::all();
+        return view('pages.admin.pengiriman-barang.create', compact ('pelanggan'));
     }
 
     /**
@@ -40,12 +48,22 @@ class PengirimanBarangController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PengirimanBarangRequest $request)
+    public function store(Request $request)
     {
-        $data = $request->all();
-        $data['slug'] = Str::slug($request->nama_penerima);
-
-        PengirimanBarang::create($data);
+        //$data = $request->all();
+        // $data['slug'] = Str::slug($request->nama_penerima);
+        PengirimanBarang::create([
+            'tanggal_pengiriman' => $request->tanggal_pengiriman,
+            'nama_penerima' => $request->nama_penerima,
+            'organisasi_penerima' => $request->organisasi_penerima,
+            'alamat_penerima' => $request->alamat_penerima,
+            'email_penerima' => $request->email_penerima,
+            'nama_barang' => $request->nama_barang,
+            'biaya' => $request->biaya,
+            'berat_barang' => $request->berat_barang,
+            'pelanggan_id' => $request->pelanggan_id
+          ]);
+        //PengirimanBarang::create($data);
         return redirect()->route('pengiriman-barang.index');
     }
 
@@ -57,7 +75,19 @@ class PengirimanBarangController extends Controller
      */
     public function show($id)
     {
-        //
+        // $item = PengirimanBarang::with([
+        //     'details', 'pengiriman_barang', 'user'
+        // ])->findOrFail($id);
+        
+        $item = DB::table('pengiriman_barang')
+                        ->select('*', 'pengiriman_barang.id as id')
+                        ->join('pelanggan','pengiriman_barang.pelanggan_id','=','pelanggan.id')
+                        ->join('users','pelanggan.users_id','=','users.id')
+                        ->where('pengiriman_barang.id',$id)
+                        ->first();
+        return view('pages.admin.pengiriman-barang.detail', [
+            'item' =>$item
+        ]);
     }
 
     /**
@@ -69,9 +99,10 @@ class PengirimanBarangController extends Controller
     public function edit($id)
     {
         $item = PengirimanBarang::findOrFail($id);
-
+        $pelanggan = Pelanggan::all();
         return view('pages.admin.pengiriman-barang.edit', [
-            'item' =>$item
+            'item' =>$item,
+            'pelanggan' => $pelanggan
         ]);
     }
 

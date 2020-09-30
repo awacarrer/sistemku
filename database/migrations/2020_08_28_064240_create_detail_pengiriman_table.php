@@ -15,6 +15,8 @@ class CreateDetailPengirimanTable extends Migration
     {
         Schema::create('detail_pengiriman', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('pengiriman_barang_id');
+            $table->text('email');
             $table->integer('no_pengiriman');
             $table->integer('biaya');
             $table->text('nama_barang');

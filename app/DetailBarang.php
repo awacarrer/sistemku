@@ -11,8 +11,13 @@ class DetailBarang extends Model
 
     protected $fillable = [
 
-        'no_pengiriman', 'biaya', 'nama_barang', 'berat_barang'
+        'pengiriman_barang_id','email','no_pengiriman', 'biaya', 'nama_barang', 'berat_barang'
     ];
 
     protected $hidden = [];
+
+    public function pengirimanbarang() {
+        return $this->belongsTo(pengirimanbarang::class, 'pengiriman_barang_id','id');
+    }
+
 }

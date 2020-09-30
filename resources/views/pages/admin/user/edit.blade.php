@@ -41,8 +41,8 @@
                             <div class="form-group">
                                 <label for="roles">Status</label>
                                 <select class="form-control" name="roles" id="roles" value={{$item->roles}}>
-                                    <option>Admin</option>
-                                    <option>Pelanggan</option>
+                                    <option>ADMIN</option>
+                                    <option>USER</option>
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-primary btn-block">Simpan</button>

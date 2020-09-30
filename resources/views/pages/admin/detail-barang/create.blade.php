@@ -10,7 +10,7 @@
                     <!-- DataTales Example -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Tambah Barang </h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Tambah Destinasi </h6>
                 </div>
 
                 @if ($errors->any())
@@ -29,29 +29,26 @@
                     <div class="table-responsive">
                         <form action="{{route('detail-barang.store')}}" method="post">
                             @csrf
-                            <!-- Resi -->
                             <div class="form-group">
-                                <label for="no_pengiriman">No Pengiriman</label>
-                                <input type="number" class="form-control" name="no_pengiriman" id="no_pengiriman" value="{{old('no_pengiriman')}}"
-                                    placeholder="Masukan No Pengiriman" />
-                            </div>
-                            <!-- Email -->
-                            <div class="form-group">
-                                <label for="nama_barang">nama_barang</label>
-                                <input type="nama_barang" class="form-control" name="nama_barang" id="nama_barang" value="{{old('nama_barang')}}"
-                                    placeholder="Masukan Nama Barang" />
+                                <label for="tracking_area_id">Tracking Area ID</label>
+                                <input type="text" class="form-control" name="tracking_area_id" id="tracking_area_id" value="{{ $tracking_area_id }}"
+                                    placeholder="contoh +" readonly/>
                             </div>
                             <div class="form-group">
-                                <label for="berat_barang">Berat Barang</label>
-                                <input type="berat_barang" class="form-control" name="berat_barang" id="berat_barang" value="{{old('berat_barang')}}"
-                                    placeholder="Masukan Berat Barang" />
+                                <label for="lacak">Lacak</label>
+                                <input type="text" class="form-control" name="lacak" id="lacak" value="{{old('nama_pengirim')}}"
+                                    placeholder="contoh +" />
                             </div>
                             <div class="form-group">
-                                <label for="biaya">Biaya</label>
-                                <input type="biaya" class="form-control" name="biaya" id="biaya" value="{{old('biaya')}}"
-                                    placeholder="Masukan Biaya Pengiriman" />
+                                <label for="waktu">Tanggal</label>
+                                <input type="datetime-local" class="form-control" name="waktu" id="waktu" value="{{old('waktu')}}"
+                                    placeholder="Masukan Waktu" />
                             </div>
-    
+                            <div class="form-group">
+                                <label for="destinasi">Destinasi</label>
+                                <input type="text" class="form-control" name="destinasi" id="destinasi" value="{{old('destinasi')}}"
+                                    placeholder="Masukan Destinasi Wilayah" />
+                            </div>
                             <button type="submit" class="btn btn-primary btn-block">Simpan</button>
                         </form>
                     </div>

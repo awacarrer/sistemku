@@ -39,7 +39,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="waktu">Waktu</label>
-                                <input type="date" class="form-control" name="waktu" id="waktu" value="{{old('waktu')}}" placeholder="Masukan Waktu " />
+                                <input type="date" class="form-control" name="datetime" id="waktu" value="{{old('waktu')}}" placeholder="Masukan Waktu " />
                             </div>
                             <div class="form-group">
                                 <label for="destinasi">Destinasi</label>
@@ -54,5 +54,9 @@
     </div>
 </div>
 <!-- /.container-fluid -->
+
+<script>
+    $("#datetime").datetimepicker();
+</script>
 
 @endsection

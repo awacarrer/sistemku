@@ -14,12 +14,11 @@ class CreatePelangganTable extends Migration
     public function up()
     {
         Schema::create('pelanggan', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->text('nama');
+            $table->integer('id');
+            $table->integer('users_id');
             $table->string('jenis_kelamin');
             $table->string('alamat');
-            $table->integer('telepon');
-            $table->text('email');
+            $table->integer('no_telpon');
             $table->longText('foto');
             $table->softDeletes();
             $table->timestamps();

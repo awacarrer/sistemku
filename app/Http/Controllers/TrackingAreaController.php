@@ -14,12 +14,15 @@ class TrackingAreaController extends Controller
     public function index(Request $request)
     {
         $user = auth()->user()->email;
-
-        $trackings = DB::select("SELECT tracking_area.telepon, pengiriman_barang.tanggal_pengiriman, tracking_area.resi FROM users
+        
+        $trackings = DB::select("SELECT * FROM users
+        JOIN pelanggan
+        ON users.id = pelanggan.users_id
         JOIN pengiriman_barang
-        ON users.email = pengiriman_barang.email
+        ON pelanggan.id = pengiriman_barang.pelanggan_id
         JOIN tracking_area
-        ON users.email = tracking_area.email
+        ON pengiriman_barang.id = tracking_area.pengiriman_barang_id
+        
         WHERE users.email = '$user' ");
         return view('pages.tracking_area', compact('trackings'));
     }

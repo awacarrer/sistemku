@@ -42,9 +42,8 @@
                        @endforelse
                     </tbody>
                 </table>
-                <button class="btn btn-secondary"><a href="tracking_area.html"
+                <button class="btn btn-secondary"><a href="{{route("pengiriman-barang.index")}}"
                     class="text-white">Kembali</a></button>
-            <button class="btn btn-success">Selesai <i class="fa fa-check"></i></button>
             </div>
         </div>
     </div>

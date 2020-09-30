@@ -7,7 +7,7 @@
     <!-- awal jumbotron -->
 
     <div class="jumbotron">
-        <div class="container">
+        <div class="container" style="height: 350px">
             <div class="row">
                 <div class="col-sm-6 col-md-6 col-lg-7">
                     <h3 style="margin-bottom: -15px;">Company Profile</h3>
@@ -45,15 +45,15 @@
                 <img src="{{url('frontend/img/sri.png')}}" height="230px">
                 </div>
                 <div class="col-9 col-sm-6 col-md-5 offset-md-1 col-lg-5">
-                    <h3>Our Profile</h3>
-                    <p style="text-align: justify;">Bisnis utama Sriwijaya Air adalah menyediakan transportasi penumpang dan barang baik di wilayah nasional maupun regional. Sejak didirikan pada 10 November 2003, Sriwijaya Air telah mencapai semua tujuan yang telah ditetapkan dalam misi dan visinya seperti: memberikan layanan berkualitas tinggi, menjadi maskapai penerbangan yang kompetitif secara nasional dan regional, bersiap untuk mengembangkan industri Sriwijaya Air ke kelas dunia.</p>
+                    <h3 style="font-family: sans-serif; font-weight: bold">Our Profile</h3>
+                    <p style="text-align: justify; font-family: roboto;">Bisnis utama Sriwijaya Air adalah menyediakan transportasi penumpang dan barang baik di wilayah nasional maupun regional. Sejak didirikan pada 10 November 2003, Sriwijaya Air telah mencapai semua tujuan yang telah ditetapkan dalam misi dan visinya seperti: memberikan layanan berkualitas tinggi, menjadi maskapai penerbangan yang kompetitif secara nasional dan regional, bersiap untuk mengembangkan industri Sriwijaya Air ke kelas dunia.</p>
                     <a href="#" class="btn btn-primary">Views</a>
                 </div>
             </div>
             <div class="row py-5">
                 <div class="col-12 col-sm-6 col-md-6 col-lg-6">
-                    <h3>Our Mission</h3>
-                    <p style="text-align: justify;">We acknowledge that nowadays everyone can fly, however we fly them with pride and prestige by implementing our quality of services before flight, in flight and after flight. We assure that our flights are affordable yet comfortable.</p>
+                    <h3 style="font-family: sans-serif; font-weight: bold;">Our Mission</h3>
+                    <p style="text-align: justify; font-family: roboto;">We acknowledge that nowadays everyone can fly, however we fly them with pride and prestige by implementing our quality of services before flight, in flight and after flight. We assure that our flights are affordable yet comfortable.</p>
                     <a href="#" class="btn btn-primary mb-3">Views</a>
                 </div>
                 <div class="col-9 col-sm-6 col-md-5 offset-md-1 col-lg-4">

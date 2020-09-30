@@ -1,7 +1,7 @@
 
   <!-- awal footer -->
 
-  <footer class="section-footer mt-5 mb-4 border-top">
+  <footer class="section-footer mt-5 border-top" style="position: relative">
     <div class="container pt-5 pb-5">
       <div class="row justify-content-center">
         <div class="col-12">
@@ -53,7 +53,7 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid" id="footer">
       <div class="row border-top justify-content-center align-items-center pt-4">
         <div class="col-auto text-gray-500 font-weight-light text-center">
           2020 &copy; Copyright skripsi.sriwijaya air • All rights reserved •

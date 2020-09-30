@@ -34,18 +34,23 @@
                                 <label for="resi">Resi</label>
                                 <input type="text" class="form-control" name="resi" id="resi" value="{{old('resi')}}"
                                     placeholder="nomor resi" />
+                                <input type="hidden" class="form-control" name="id" id="id"  value="{{ date('dmYhis') }}"
+                            placeholder="nomor id"/>
                             </div>
                             <!-- Email -->
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" class="form-control" name="email" id="email" value="{{old('email')}}"
-                                    placeholder="contoh@gmail.com" />
+                                <label for="pengiriman_barang_id">Pengirim</label>
+                                <select name="pengiriman_barang_id" id="pengiriman_barang_id" class="form-control">
+                                    @foreach($item as $p)
+                                        <option value="{{ $p->id }}">{{ $p->name }} [ {{ $p->tanggal_pengiriman }} ]</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <!-- Telepon -->
                             <div class="form-group">
                                 <label for="telepon">Telepon</label>
                                 <input type="number" class="form-control" name="telepon" id="telepon" value="{{old('telepon')}}"
-                                    placeholder="" />
+                                    placeholder="Masukan Nomor Telepon" />
                             </div>
                             <!-- Kota Asal -->
                             <div class="form-group">
@@ -63,6 +68,21 @@
                                 <option>Jakarta Timur</option>
                                 <option>Jakarta Selatan</option>
                                 </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="lacak">Lacak</label>
+                                <input type="text" class="form-control" name="lacak" id="lacak" value="{{old('nama_pengirim')}}"
+                                    placeholder="contoh +" />
+                            </div>
+                            <div class="form-group">
+                                <label for="waktu">Tanggal</label>
+                                <input type="datetime-local" class="form-control" name="waktu" id="waktu" value="{{old('waktu')}}"
+                                    placeholder="Masukan Waktu" />
+                            </div>
+                            <div class="form-group">
+                                <label for="destinasi">Destinasi</label>
+                                <input type="text" class="form-control" name="destinasi" id="destinasi" value="{{old('destinasi')}}"
+                                    placeholder="Masukan Destinasi Wilayah" />
                             </div>
                             <div class="form-group">
                                 <label for="alamat">Alamat</label>

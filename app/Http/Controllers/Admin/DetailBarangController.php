@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\DetailBarangRequest;
 use App\DetailBarang;
+use App\StatusPengiriman;
 use Illuminate\Http\Request;
 use Illuminate\Support\str;
 
@@ -29,9 +30,10 @@ class DetailBarangController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('pages.admin.detail-barang.create');
+        // $id = Input::get
+        return view('pages.admin.detail-barang.create',['tracking_area_id' => $id]);
     }
 
     /**
@@ -40,14 +42,14 @@ class DetailBarangController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(DetailBarangRequest $request)
+    public function store(Request $request)
     {
         $data = $request->all();
-        $data['slug'] = Str::slug($request->no_pengirim);
+        // $data['slug'] = Str::slug($request->no_pengirim);
 
-        DetailBarang::create($data);
+        StatusPengiriman::create($data);
         
-        return redirect()->route('detail-barang.index');
+        return redirect('/admin/tracking-area/'. $request->tracking_area_id);
     }
 
     /**

@@ -20,7 +20,7 @@
               Services
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="/layanan">Registrasi</a>
+              <a class="dropdown-item" href="/layanan">Layanan</a>
               <a class="dropdown-item" href="/tracking_area">Tracking Area</a>
               <a class="dropdown-item" href="/informasi_biaya">informasi biaya</a>
             </div>

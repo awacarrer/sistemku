@@ -25,12 +25,14 @@ class PengirimanBarangRequest extends FormRequest
     {
         return [
             'tanggal_pengiriman' => 'required',
-            'nama_pengirim' => 'required|max:255',
-            'kota_asal' => 'required|max:255',
-            'kota_tujuan' => 'required|max:255',
-            'nama_penerima' => 'required',
+            'pelanggan_id' => 'required|max:255',
             'organisasi_penerima' => 'required',
-            'alamat' => 'required|max:255',
+            'email_penerima' => 'required',
+            'nama_barang' => 'required|max:255',
+            'berat_barang' => 'required',
+            'biaya' => 'required',
+            'alamat_penerima' => 'required|max:255',
+            'pelanggan_id' => 'required|max:255'
         ];
     }
 }
